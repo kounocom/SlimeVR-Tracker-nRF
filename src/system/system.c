@@ -333,9 +333,9 @@ static void button_thread(void)
 		{
 			if (!get_status(SYS_STATUS_BUTTON_PRESSED))
 				set_status(SYS_STATUS_BUTTON_PRESSED, true);
-			if (num_presses == 0 && !CONFIG_0_SETTINGS_READ(CONFIG_0_USER_EXTRA_ACTIONS))
-				connection_update_button(1);
 			num_presses++;
+			if (!CONFIG_0_SETTINGS_READ(CONFIG_0_USER_EXTRA_ACTIONS))
+				connection_update_button(num_presses);
 			LOG_INF("Button pressed %d times", num_presses);
 			last_press_duration = 0;
 			last_press = k_uptime_get();
