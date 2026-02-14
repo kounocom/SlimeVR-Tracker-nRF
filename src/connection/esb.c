@@ -57,7 +57,7 @@ static bool esb_paired = false;
 
 #define TX_ERROR_THRESHOLD 30
 #define TX_ERROR_MAX 100
-#define TX_ERROR_CLEAR_RATE 3
+#define TX_ERROR_CLEAR_RATE 10
 
 LOG_MODULE_REGISTER(esb_event, LOG_LEVEL_INF);
 
